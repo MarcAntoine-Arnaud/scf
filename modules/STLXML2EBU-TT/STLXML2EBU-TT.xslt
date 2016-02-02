@@ -1023,7 +1023,7 @@ limitations under the License.
         <xsl:param name="oldForeground"/>
         <xsl:param name="oldBackground"/>
         <!--@ Append normalized text-node to the current buffer -->
-        <xsl:variable name="bufferAdded" select="concat($buffer, string(normalize-space(.)))"/>
+        <xsl:variable name="bufferAdded" select="concat($buffer, normalize-space(.), ' ' )"/>
         <xsl:if test="count(following-sibling::node()) = 0 and string-length(normalize-space($buffer)) &gt; 0">
             <xsl:call-template name="writeBuffer">
                 <xsl:with-param name="background" select="$background"/>
